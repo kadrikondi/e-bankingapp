@@ -1,0 +1,17 @@
+#signin{
+    margin: 2% auto;
+    width: 400px;
+    border-radius: 20px;
+  
+    
+}
+#loginbtn:hover{
+    background-color:#ec407a!important;
+    color:white!important;
+}
+
+@media screen and (max-width:600px) {
+    #signin{
+        width:95%;
+    }
+}

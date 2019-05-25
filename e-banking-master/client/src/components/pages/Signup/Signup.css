@@ -1,0 +1,38 @@
+#signup{
+    margin: 0% auto;
+    width: 35%;
+    /* border-radius: 20px; */
+
+
+    
+}
+
+@media screen and (max-width:600px) {
+  #signup{
+      width: 100%;
+      height: auto;
+  }
+      
+    }
+
+
+
+    .loader{
+
+        border: 3px solid rgb(236, 64, 122);
+        /* rgb(235, 41, 106); */
+         /* #f3f3f3;  b4 */
+        border-radius: 50%;
+        border-top: 3px solid #ffffff;
+        /* #3498db; b4*/
+        width: 15px;
+        height: 15px;
+        animation: spin 2s linear infinite
+
+    
+    }
+    @keyframes spin{
+        0% { transform: rotate(0deg);}
+        100% {transform: rotate(360deg);}
+    }    
+        
