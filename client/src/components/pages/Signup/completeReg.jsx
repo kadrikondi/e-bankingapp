@@ -47,7 +47,10 @@ export default class completeReg extends Component {
           axios.put(`/bill/${id}`, formdata)
           .then( res => {
             this.setState({ isLoading: false });
+
             if (res.data.message === "Success: Nepa bill uploaded successfully") {
+              this.setState({ info: res.data.message });
+
                 document.getElementById('formi3').style.display = 'block'
             } else {
               this.setState({ info: res.data.message });
@@ -65,6 +68,8 @@ export default class completeReg extends Component {
           .then( res => {
             this.setState({ isLoading: false });
             if (res.data.message === "Success: Signature uploaded successfully") {
+              // this.setState({ info: res.data.message });
+
                 this.props.history.push("/signin");
             } else {
               this.setState({ info: res.data.message });
@@ -131,7 +136,7 @@ export default class completeReg extends Component {
               </div>
             </fieldset>
 
-              {this.state.info === "" || this.state.info === undefined || this.state.info === "Success: id card uploaded successfully" ? (
+              {this.state.info === "" || this.state.info === undefined || this.state.info === "Success: id card uploaded successfully" || this.state.info === "Success: Nepa bill uploaded successfully" || this.state.info === "Success: Signature uploaded successfully"  ? (
               <div className="alert alert-danger" style={noshowinfo} id="info">
                 ){this.state.info}
               </div>
@@ -190,7 +195,7 @@ export default class completeReg extends Component {
             </fieldset>
 
 
-              {this.state.info === "" || this.state.info === undefined || this.state.info === "Success: id card uploaded successfully" ? (
+              {this.state.info === "" || this.state.info === undefined || this.state.info === "Success: Nepa bill uploaded successfully" || this.state.info === "Success: id card uploaded successfully" || this.state.info === "Success: Signature uploaded successfully"? (
                 <div className="alert alert-danger" style={noshowinfo} id="info">
                   ){this.state.info}
                 </div>
@@ -200,7 +205,7 @@ export default class completeReg extends Component {
                   </div>
                 )}
 
-              {this.state.info === "Success: id card uploaded successfully" ? (
+              {this.state.info === "Success: Nepa bill uploaded successfully" ? (
                 <div className="alert alert-success">{this.state.info}</div>
               ) : null}
             <div className="text-center">
@@ -249,7 +254,8 @@ export default class completeReg extends Component {
               </div>
             </fieldset>
 
-              {this.state.info === "" || this.state.info === undefined || this.state.info === "Success: id card uploaded successfully" ? (
+              {this.state.info === "" || this.state.info === undefined || this.state.info === "Success: Signature uploaded successfully" 
+                || this.state.info === "Success: Nepa bill uploaded successfully" || this.state.info === "Success: id card uploaded successfully"? (
                 <div className="alert alert-danger" style={noshowinfo} id="info">
                   ){this.state.info}
                 </div>
@@ -259,7 +265,7 @@ export default class completeReg extends Component {
                   </div>
                 )}
 
-              {this.state.info === "Success: id card uploaded successfully" ? (
+              {this.state.info === "Success: Signature uploaded successfully" ? (
                 <div className="alert alert-success">{this.state.info}</div>
               ) : null}
 

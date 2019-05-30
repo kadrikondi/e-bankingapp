@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Customerheader from "../customerheader";
 import Sidebar from "./sidebar";
+import '../../admin/adminsAuth/Signin.css'
 
 export class complain extends Component {
   constructor(){
@@ -82,7 +83,7 @@ export class complain extends Component {
             </div>
 
             <div className="col-lg-8 col-md-8 col-md-8 col-sm-8">
-              <div className="card mt-5" style={{ margin: "0 auto" }}>
+              <div className="card mt-5" id="signin" style={{ margin: "0 auto" }}>
                 <div className="card-header dark-text text-center py-4">
                   <h4>Enqury/Complain</h4>
                   <div className="card-body text-center">

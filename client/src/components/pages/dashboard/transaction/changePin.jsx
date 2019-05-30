@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Sidebar from "./sidebar";
 import Customerheader from "../customerheader";
+import '../../admin/adminsAuth/Signin.css'
 
 export default class changePin extends Component {
     constructor(){
@@ -52,7 +53,7 @@ export default class changePin extends Component {
                 style={{ width: "50%", margin: "0 auto" }}
               >
                 <div className="card-header dark-text text-center py-4">
-                  <h4> Change Pin </h4>
+                  <h4> Create Pin </h4>
                   <div className="card-body text-center">
                     <div className="form-group">
                       <input
@@ -76,7 +77,7 @@ export default class changePin extends Component {
                     <div>{this.state.message}</div>
                        <button class="btn btn-mdb-color btn-rounded btn-sm my-0 ml-sm-2" type="submit"
                         onClick={this.handleSubmit.bind(this)}
-                        >Change pin</button>
+                        >Create pin</button>
                     
                   </div>
                 </div>

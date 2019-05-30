@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Adminheader from "./adminheader";
 import Adminsidebar from "./adminsidebar";
 import { Link } from "react-router-dom";
+import './adminsAuth/Signin.css'
 
 export class debitaccount extends Component {
   constructor(){
@@ -58,8 +59,8 @@ export class debitaccount extends Component {
             </div>
             <div className="col-lg-8">
               <div
-                className="card mt-5"
-                style={{ width: "50%", margin: "0 auto" }}
+                className="card mt-5" id="signin"
+                style={{  margin: "0 auto" }}
               >
                 <div className="card-header dark-text text-center py-4">
                   <h4>Debit Account </h4>
@@ -83,8 +84,8 @@ export class debitaccount extends Component {
               {/* confirm customer */}
 
               <div
-                className="card mt-5"
-                style={{ width: "50%", margin: "0 auto" }}
+                className="card mt-5"  id="signin"
+                style={{  margin: "0 auto" }}
               >
                 <div className="card-header dark-text text-center py-4">
                   <h4> Account Details</h4>

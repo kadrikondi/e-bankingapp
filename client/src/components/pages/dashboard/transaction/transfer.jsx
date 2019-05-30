@@ -3,6 +3,7 @@ import "../../../asset/css/loader.css";
 import Sidebar from "./sidebar";
 import Customerheader from "../customerheader";
 import { Link } from "react-router-dom";
+import '../../admin/adminsAuth/Signin.css'
 import { searchDoctor } from '../../../apidata/api'
 export class transfer extends Component {
   constructor() {
@@ -74,8 +75,8 @@ export class transfer extends Component {
 
             <div className="col-lg-8">
               <div
-                className="card mt-5"
-                style={{ width: "50%", margin: "0 auto" }}
+                className="card mt-5" 	id="signin"
+                style={{  margin: "0 auto" }}
               >
                 <div className="card-header dark-text text-center py-4">
                   <h4> Make Transfer </h4>

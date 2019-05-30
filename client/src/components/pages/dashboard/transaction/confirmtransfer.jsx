@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Customerheader from "../customerheader";
 import Sidebar from "./sidebar";
+import '../../admin/adminsAuth/Signin.css'
 
 export class confirmtransfer extends Component {
   constructor(){
@@ -116,7 +117,7 @@ export class confirmtransfer extends Component {
                         <div className="col-lg-8 col-md-8 col-sm-8">
 
 
-                            <div className="card" style={{ width: "50%", margin: "60px auto" }}>
+              <div className="card" id="signin"style={{ margin: "60px auto" }}>
                                 <div className="card-header dark-text text-center py-4">
                                     <h4> Transfer Process</h4>
                                     <div className="card-body text-center">

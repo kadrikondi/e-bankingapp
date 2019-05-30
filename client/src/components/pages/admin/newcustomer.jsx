@@ -48,7 +48,10 @@ export class newcustomer extends Component {
                   <th>Address</th>
                   <th>city</th>
                   <th>State</th>
-                 
+                  <th>user photo</th>
+                  <th>id photo</th>
+                  <th>Nepa bill</th>
+                  <th>signature</th>
                   <th>Confirm</th>
 
                 </tr>
@@ -65,7 +68,39 @@ export class newcustomer extends Component {
                   <td>{user.address}</td>
                   <td>{user.city}</td>
                   <td>{user.state}</td>
-                  
+                   <td className="ok"> <a href={user.photo}><img src={user.photo} alt="photo"
+                     style={{
+                       width: "100%",
+
+                       borderRadius: "10px",
+
+                     }} alt="" /></a></td>
+
+                   <td className="mt-3"> <a href={user.id_photo}><img src={user.id_photo} alt="photo"
+                     style={{
+                       width: "100%",
+                       height: "auto",
+
+                       borderRadius: "10px",
+
+                     }} alt="" /></a></td>
+
+
+                   <td className="mt-3"> <a href={user.bill}><img src={user.bill} alt="photo"
+                     style={{
+                       width: "100%",
+
+                       borderRadius: "10px",
+
+                     }} alt="" /></a></td>
+
+                   <td className="mt-3"> <a href={user.signature}><img src={user.signature} alt="photo"
+                     style={{
+                       width: "100%",
+
+                       borderRadius: "10px",
+
+                     }} alt="" /></a></td>
                   
                   <td><Link to={`/create/acctno/${user._id}`}><button className="btn btn-success">confirm</button></Link></td>
                 </tr>
@@ -73,19 +108,7 @@ export class newcustomer extends Component {
                    
                 })}
 
-                <tr><th>user photo</th></tr>
-                {this.state.users.map((user, index) => {
-                      return <tr key={index}>
-                      
-                        <td className="mt-3"><img src={user.photo} alt="photo"
-                          style={{
-                            width: "100%",
-                            padding: "1px 5px",
-                            borderRadius: "10px",
-                           
-                          }}alt=""/></td>
-                      </tr>
-                })}
+             
                 
                 
               </table>
