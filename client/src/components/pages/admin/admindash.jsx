@@ -12,11 +12,11 @@ export class admindash extends Component {
                 <p id="date"></p>
                 <p id="time"></p> 
           <div className="row">
-            <div className="col-lg-4">
+            <div className="col-lg-4 col-md-4">
               <Adminsidebar />
             </div>
 
-            <div className="col-lg-4 mt-5" >
+            <div className="col-lg-4 col-md-4 mt-5" >
               <div className="action mt-2" style={actionStyle}>
                 <Link to="/newcus">
                   {" "}
@@ -47,7 +47,7 @@ export class admindash extends Component {
               </div>
             </div>
 
-            <div className="col-lg-4 mt-5">
+            <div className="col-lg-4 col-md-4 col-sm-4  mt-5">
               <div className="action mt-2" style={actionStyle}>
                 <Link to="/viewtrans">
                   <button className="site-btn sb-gradients btn btn-lg mt-3 ">

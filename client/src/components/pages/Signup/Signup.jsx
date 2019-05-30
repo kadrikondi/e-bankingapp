@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import '../../asset/css/loader.css'
 import "./Signup.css";
+
 import axios from 'axios'
 
 class Signup extends Component {
@@ -42,11 +44,14 @@ class Signup extends Component {
     //document.getElementById('form').style.display = 'none'
     //document.getElementById('form').style.display = 'block'
   }
-  handleSubmit(e) {
-    
+  async handleSubmit(e) {
     e.preventDefault()
-    
+    await this.setState({isLoading: true });
+  
+   
+    console.log(this.state.isLoading + 'isl')
     const formdata = new FormData();
+    
     formdata.append('photo', this.state.photo)
     formdata.append('fname', this.state.fname)
     formdata.append('lname', this.state.lname)
@@ -60,12 +65,14 @@ class Signup extends Component {
     formdata.append('state', this.state.state)
     formdata.append('country', this.state.country)
     formdata.append('id_card', this.state.id_card)
-
+   
           axios.post('/create', formdata)
+   
           .then( res => {
             //console.log(res);
-            
+           
             this.setState({ isLoading: false });
+          
     
             if (res.data.message === "processing your account..., check your email") {
               var id = res.data.id
@@ -73,10 +80,11 @@ class Signup extends Component {
             } else {
               this.setState({ info: res.data.message });
               //alert(res.data.message)
+              this.setState({ isLoading: false });
             }
           })
           .catch( err => console.log(err))
-    
+    // this.setState({isLoading: true });
   };
   handleFirstName(e) {
     this.setState({ fname: e.target.value });
@@ -129,11 +137,13 @@ class Signup extends Component {
     const noshowinfo = {
       display: "none"
     };
+    
+       
 
     return (
       <div>
         {/* <!--Form with header--> */}
-        <div className="card mt-5" id="signup" >
+        <div className="card mt-5" id="signup" style={{width:"50%"}} >
           <div className="card-body">
             {/* <!--Header--> */}
             <div className="card-header black-text text-center py-4">
@@ -338,10 +348,10 @@ class Signup extends Component {
               >
               
                 &nbsp;Sign up
-                <div style={{ margin: "auto", width: "50%" }}>
-                  {this.state.isLoading === true ? (
-                    <div className="loader" />
-                  ) : null}
+                <div style={{ margin: "auto" ,color:'white'}}>
+                  {this.state.isLoading ? (
+                    <div id="signuploading" >loading</div>
+                  ) : (<div></div>)}
                 </div>
               </button>
             </div>

@@ -27,13 +27,13 @@ export class customerProfile extends Component {
             <div className="row">
 
 
-                <div className="col-lg-4">
+                <div className="col-lg-4 col-md-4 col-sm-4 col-xl-4">
 
                     <Sidebar/>
                 </div>
 
 
-                <div className="col-lg-8">
+                <div className="col-lg-8 col-md-8 col-sm-8 col-xl-8">
               <div className="card mt-3 "  >
 
                 {/* <!-- Card image --> */}

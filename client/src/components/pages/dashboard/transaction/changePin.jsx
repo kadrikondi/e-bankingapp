@@ -6,7 +6,8 @@ export default class changePin extends Component {
     constructor(){
         super()
         this.state = {
-            pin:''
+            pin:'',
+            message:''
         }
     }
     updatePin(acct_no){
@@ -23,6 +24,7 @@ export default class changePin extends Component {
         })
         .then( res => res.json())
         .then( res => {
+          this.setState({message:res.message})
             console.log(res)
         })
         .catch( err => console.log(err))
@@ -40,11 +42,11 @@ export default class changePin extends Component {
         <Customerheader />
         <div className="container">
           <div className="row">
-            <div className="col-lg-4">
+            <div className="col-lg-4 col-md-4 col-sm-4">
               <Sidebar />
             </div>
 
-            <div className="col-lg-8">
+            <div className="col-lg-8 col-md-8 col-sm-8">
               <div
                 className="card mt-5"
                 style={{ width: "50%", margin: "0 auto" }}
@@ -71,6 +73,7 @@ export default class changePin extends Component {
                       >
                         Continue{" "}
                       </button> */}
+                    <div>{this.state.message}</div>
                        <button class="btn btn-mdb-color btn-rounded btn-sm my-0 ml-sm-2" type="submit"
                         onClick={this.handleSubmit.bind(this)}
                         >Change pin</button>

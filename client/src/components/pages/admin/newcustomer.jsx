@@ -30,7 +30,7 @@ export class newcustomer extends Component {
 
         <div className="containe">
           <div className="row">
-            <div className="col-lg-2.5">
+            <div className="col-lg-2.5 ">
               <Sidebar />
             </div>
             <div className="col-lg-9">
@@ -50,7 +50,9 @@ export class newcustomer extends Component {
                   <th>State</th>
                  
                   <th>Confirm</th>
+
                 </tr>
+               
                 {this.state.users.map((user, index) => {
                  return <tr key={index}>
                   <td>{user.fname}</td>
@@ -67,6 +69,22 @@ export class newcustomer extends Component {
                   
                   <td><Link to={`/create/acctno/${user._id}`}><button className="btn btn-success">confirm</button></Link></td>
                 </tr>
+                  
+                   
+                })}
+
+                <tr><th>user photo</th></tr>
+                {this.state.users.map((user, index) => {
+                      return <tr key={index}>
+                      
+                        <td className="mt-3"><img src={user.photo} alt="photo"
+                          style={{
+                            width: "100%",
+                            padding: "1px 5px",
+                            borderRadius: "10px",
+                           
+                          }}alt=""/></td>
+                      </tr>
                 })}
                 
                 

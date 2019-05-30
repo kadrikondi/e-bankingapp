@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Customerheader from "./customerheader";
 import customer from "../../asset/img/member/1.jpg";
+import "../Signup/Signup.css"
+import './dasb.css'
 import { Link } from "react-router-dom";
 import Sidebar from "./transaction/sidebar";
 
@@ -37,12 +39,12 @@ export class dashboard extends Component {
 
         <div className="container" style={{ marginTop: "5%" }}>
           <div className="row">
-            <div className="col-lg-4">
+            <div className="col-lg-4 col-md-4 ">
 
               <Sidebar/>
             </div>
             <div
-              className="col-lg-4 mt-5"
+              className="col-lg-4 col-md-4  mt-5"
              
             >
               <div className="action mt-2" style={actionStyle}>
@@ -55,7 +57,7 @@ export class dashboard extends Component {
               </div>
             </div>
 
-            <div className="col-lg-4 mt-5">
+            <div className="col-lg-4 col-md-4  mt-5">
               <div className="action mt-2" style={actionStyle}>
                 <Link to="/ctransfer"><button className="site-btn sb-gradients btn btn-lg mt-5 "> <h4 style={{ color: '#f2f2f2' }}> Transfer Money</h4> </button></Link>
               </div>
@@ -64,6 +66,7 @@ export class dashboard extends Component {
                 <Link to={`/viewtrans/${this.state.id}`}><button className="site-btn sb-gradients btn btn-lg mt-5 "> <h4 style={{ color: '#f2f2f2' }}>View Transactions</h4> </button></Link>
               </div>
             </div>
+            {/* second colume */}
           </div>
         </div>
       </div>
@@ -76,11 +79,12 @@ const liStyle = {
 };
 const actionStyle = {
   width: "250px",
-  height: "200px",
-  padding: "10px",
+  height: "150px",
+  padding: "5px",
   backgroundColor: "#3f16af",
   borderRadius: "20%",
   textAlign:"center",
+
  
 };
 export default dashboard;

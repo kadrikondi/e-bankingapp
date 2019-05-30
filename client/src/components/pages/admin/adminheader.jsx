@@ -6,7 +6,7 @@ export class adminheader extends Component {
         return (
             <div style={{ marginBottom: '10%' }}>
                 
-                <header className="header-section clearfix mb-5" style={{ backgroundColor: 'black', color: '#f1f1f1', }}>
+                <header className="header-section clearfix mb-5" style={{ backgroundColor: 'black', color: '#f1f1f1' }}>
                     <div className="container-fluid">
                         <Link to="/adash" className="site-logo">
                             <img src={logo} alt='ok' />
@@ -19,7 +19,7 @@ export class adminheader extends Component {
                         <nav className="main-menu">
                             <ul className="menu-list">
                                 <li>
-                                    <a href> Our Solution</a>
+                                    <Link to="/adash"> Home</Link>
                                 </li>
                                 <li>
                                     <a href>Our blog</a>

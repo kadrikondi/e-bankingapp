@@ -79,10 +79,10 @@ export class closeaccount extends Component {
         <Adminheader />
         <div className="containe">
           <div className="row">
-            <div className="col-lg-3">
+            <div className="col-lg-3 col-md-3 col-sm3">
               <Adminsidebar />
             </div>
-            <div className="col-lg-8">
+            <div className="col-lg-8 col-md-8 col-sm-8">
               <div
                 className="card mt-5"
                 style={{ width: "50%", margin: "0 auto" }}
@@ -96,7 +96,7 @@ export class closeaccount extends Component {
                         type="text"
                         name=""
                         id=""
-                        placeholder="Account Number"
+                        placeholder="Account Number "
                         value={this.state.acct_no}
                         onChange={this.handleAcct.bind(this)}
                       />

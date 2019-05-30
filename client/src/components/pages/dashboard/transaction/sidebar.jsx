@@ -64,7 +64,7 @@ export class sidebar extends Component {
             alt="customerphoto"
             style={{
               width: "40%",
-              padding: "1px 30px",
+              padding: "1px 20px",
               borderRadius: "45%",
               margin: "10px"
             }}
@@ -102,10 +102,10 @@ export class sidebar extends Component {
               </Link>
             </li>
           </ul>
-          <Link to="/">
+          {/* <Link to="/">
             {" "}
             <button className="site-btn btn btn-danger mt-5" onClick={this.handleLogout.bind(this)}>Sign Out</button>
-          </Link>
+          </Link> */}
         </div>
 
         <div />

@@ -77,11 +77,11 @@ export class complain extends Component {
         <Customerheader />
         <div className="container">
           <div className="row">
-            <div className="col-lg-4">
+            <div className="col-lg-4 col-md-4 col-sm-4">
               <Sidebar />
             </div>
 
-            <div className="col-lg-8">
+            <div className="col-lg-8 col-md-8 col-md-8 col-sm-8">
               <div className="card mt-5" style={{ margin: "0 auto" }}>
                 <div className="card-header dark-text text-center py-4">
                   <h4>Enqury/Complain</h4>

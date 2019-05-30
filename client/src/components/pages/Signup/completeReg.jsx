@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import './Signup.css'
 export default class completeReg extends Component {
     constructor() {
         super();
@@ -17,6 +18,8 @@ export default class completeReg extends Component {
         document.getElementById('formi3').style.display = 'none'
     }
     idCard(id){
+      // this.setState({isLoading: false })
+      console.log(this.state.isLoading +'isload')
         const formdata = new FormData();
         formdata.append('id_photo', this.state.id_photo)
 
@@ -24,13 +27,18 @@ export default class completeReg extends Component {
           .then( res => {
             this.setState({ isLoading: false });
             if (res.data.message === "Success: id card uploaded successfully") {
+              this.setState({ info: res.data.message });
                 document.getElementById('formi2').style.display = 'block'
             } else {
               this.setState({ info: res.data.message });
-              //alert(res.data.message)
+              this.setState({ isLoading: false })
+              console.log(this.state.isLoading + 'isload1')
+              // alert(res.data.message)
             }
           })
           .catch( err => console.log(err))
+      this.setState({ isLoading: false })
+      console.log(this.state.isLoading + 'isloadeee')
     }
     nepaBill(id){
         const formdata = new FormData();
@@ -43,9 +51,11 @@ export default class completeReg extends Component {
                 document.getElementById('formi3').style.display = 'block'
             } else {
               this.setState({ info: res.data.message });
+              this.setState({ isLoading: false });
             }
           })
           .catch( err => console.log(err))
+      this.setState({ isLoading: false });
     }
     signature(id){
         const formdata = new FormData();
@@ -58,21 +68,26 @@ export default class completeReg extends Component {
                 this.props.history.push("/signin");
             } else {
               this.setState({ info: res.data.message });
+              this.setState({ isLoading: false });
             }
           })
           .catch( err => console.log(err))
+      this.setState({ isLoading: false });
     }
     handleForm1(e){
         e.preventDefault()
         this.idCard(this.props.match.params.id)
+      this.setState({ isLoading: true })
     }
     handleForm2(e){
         e.preventDefault()
         this.nepaBill(this.props.match.params.id)
+      this.setState({ isLoading: true });
     }
     handleForm3(e){
         e.preventDefault()
         this.signature(this.props.match.params.id)
+      this.setState({ isLoading: true });
     }
     handleSignature(e){
         this.setState({signature:e.target.files[0]})
@@ -116,7 +131,7 @@ export default class completeReg extends Component {
               </div>
             </fieldset>
 
-            {this.state.info === "" || this.state.info === undefined ? (
+              {this.state.info === "" || this.state.info === undefined || this.state.info === "Success: id card uploaded successfully" ? (
               <div className="alert alert-danger" style={noshowinfo} id="info">
                 ){this.state.info}
               </div>
@@ -125,7 +140,10 @@ export default class completeReg extends Component {
                 {this.state.info}
               </div>
             )}
-
+                
+              {this.state.info === "Success: id card uploaded successfully"? (
+                <div className="alert alert-success">{this.state.info}</div>
+              ):null}
             <div className="text-center">
               <button
                 className="btn site-btn sb-gradients mdi mdi-account-plus" type="submit"
@@ -133,10 +151,10 @@ export default class completeReg extends Component {
               >
               
                 &nbsp;Proceed
-                <div style={{ margin: "auto", width: "50%" }}>
-                  {this.state.isLoading === true ? (
-                    <div className="loader" />
-                  ) : null}
+                <div style={{ margin: "auto",color:'white' }}>
+                  {this.state.isLoading  ? (
+                    <div id="signuploading" >loading</div>
+                  ) : (<div></div>)}
                 </div>
               </button>
             </div>
@@ -171,16 +189,20 @@ export default class completeReg extends Component {
               </div>
             </fieldset>
 
-            {this.state.info === "" || this.state.info === undefined ? (
-              <div className="alert alert-danger" style={noshowinfo} id="info">
-                ){this.state.info}
-              </div>
-            ) : (
-              <div className="alert alert-danger" id="info">
-                {this.state.info}
-              </div>
-            )}
 
+              {this.state.info === "" || this.state.info === undefined || this.state.info === "Success: id card uploaded successfully" ? (
+                <div className="alert alert-danger" style={noshowinfo} id="info">
+                  ){this.state.info}
+                </div>
+              ) : (
+                  <div className="alert alert-danger" id="info">
+                    {this.state.info}
+                  </div>
+                )}
+
+              {this.state.info === "Success: id card uploaded successfully" ? (
+                <div className="alert alert-success">{this.state.info}</div>
+              ) : null}
             <div className="text-center">
               <button
                 className="btn site-btn sb-gradients mdi mdi-account-plus" type="submit"
@@ -188,11 +210,11 @@ export default class completeReg extends Component {
               >
               
                 &nbsp;Proceed
-                <div style={{ margin: "auto", width: "50%" }}>
-                  {this.state.isLoading === true ? (
-                    <div className="loader" />
-                  ) : null}
-                </div>
+              <div style={{ margin: "auto", color: 'white' }}>
+                    {this.state.isLoading ? (
+                      <div id="signuploading" >loading</div>
+                    ) : (<div></div>)}
+                  </div>
               </button>
             </div>
             
@@ -227,15 +249,19 @@ export default class completeReg extends Component {
               </div>
             </fieldset>
 
-            {this.state.info === "" || this.state.info === undefined ? (
-              <div className="alert alert-danger" style={noshowinfo} id="info">
-                ){this.state.info}
-              </div>
-            ) : (
-              <div className="alert alert-danger" id="info">
-                {this.state.info}
-              </div>
-            )}
+              {this.state.info === "" || this.state.info === undefined || this.state.info === "Success: id card uploaded successfully" ? (
+                <div className="alert alert-danger" style={noshowinfo} id="info">
+                  ){this.state.info}
+                </div>
+              ) : (
+                  <div className="alert alert-danger" id="info">
+                    {this.state.info}
+                  </div>
+                )}
+
+              {this.state.info === "Success: id card uploaded successfully" ? (
+                <div className="alert alert-success">{this.state.info}</div>
+              ) : null}
 
             <div className="text-center">
               <button
@@ -244,11 +270,11 @@ export default class completeReg extends Component {
               >
               
                 &nbsp;Submit
-                <div style={{ margin: "auto", width: "50%" }}>
-                  {this.state.isLoading === true ? (
-                    <div className="loader" />
-                  ) : null}
-                </div>
+              <div style={{ margin: "auto", color: 'white' }}>
+                    {this.state.isLoading ? (
+                      <div id="signuploading" >loading</div>
+                    ) : (<div></div>)}
+                  </div>
               </button>
             </div>
             

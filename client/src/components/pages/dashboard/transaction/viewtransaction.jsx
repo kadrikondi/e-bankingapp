@@ -22,12 +22,12 @@ export class viewtransaction extends Component {
         <Customerheader />
         <div className="container ">
           <div className="row">
-            <div className="col-lg-4">
+            <div className="col-lg-4 col-md-4 col-sm-4">
               <Sidebar />
             </div>
 
-            <div className="col-lg-8 mt-5">
-              <table className=" mt-5 table table-striped table-bordered table-hover table-condensed">
+            <div className="col-lg-8 col-md-8 col-sm-8 mt-5">
+              <table className=" mt-5 table table-striped table-bordered table-hover table-condensed" style={{overflow:'scroll'}}>
                 <tr>
                   <th>S/N</th>
                   

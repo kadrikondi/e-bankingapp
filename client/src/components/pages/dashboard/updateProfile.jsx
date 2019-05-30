@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import {getSingleUser} from '../../apidata/api'
+import "../Signup/Signup.css"
 import axios from 'axios'
+import Customerheader from './customerheader';
+import Sidebar from './transaction/sidebar';
 
 export default class updateProfile extends Component {
     constructor() {
@@ -32,7 +35,7 @@ export default class updateProfile extends Component {
         this.handleLastName = this.handleLastName.bind(this);
         this.handleCity = this.handleCity.bind(this);
         this.handleDateOfBirth = this.handleDateOfBirth.bind(this);
-        this.handlePassword = this.handlePassword.bind(this);
+        // this.handlePassword = this.handlePassword.bind(this);
         this.handleAddress = this.handleAddress.bind(this);
         this.handleCountry = this.handleCountry.bind(this)
       }
@@ -70,6 +73,7 @@ export default class updateProfile extends Component {
       }
     
       updateProfile(id){
+        this.setState({isLoading:true})
           fetch(`/edit/profile/${id}`, {
               method:'PUT',
               headers:{
@@ -90,9 +94,14 @@ export default class updateProfile extends Component {
           })
           .then(res => res.json())
           .then( res => {
+            this.setState({isLoading:false})
               alert(res.message)
           })
-          .catch(err => console.log(err))
+          .catch(err => {
+            console.log(err)
+            this.setState({ isLoading: false })
+          })
+    
       }
       handleChange(e){
           e.preventDefault()
@@ -101,6 +110,14 @@ export default class updateProfile extends Component {
   render() {
     return (
       <div>
+
+        <Customerheader/>
+        <div className="container">
+          <div className="row">
+    <div className="col-lg-3 col-md-4 col-sm-4">
+    <Sidebar/>
+    </div>
+         <div className="col-lg-9 col-md-8 col-sm-7">
         <div className="card mt-5" id="signup" >
           <div className="card-body">
             {/* <!--Header--> */}
@@ -244,15 +261,18 @@ export default class updateProfile extends Component {
               >
               
                 &nbsp;Update
-                <div style={{ margin: "auto", width: "50%" }}>
-                  {this.state.isLoading === true ? (
-                    <div className="loader" />
-                  ) : null}
+                <div style={{ margin: "auto", color: 'white' }}>
+                  {this.state.isLoading ? (
+                    <div id="signuploading" >loading</div>
+                  ) : (<div></div>)}
                 </div>
               </button>
             </div>
             
           </div>
+        </div>
+            </div>
+        </div>
         </div>
       </div>
     )

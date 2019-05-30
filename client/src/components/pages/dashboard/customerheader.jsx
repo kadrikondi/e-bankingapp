@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 import logo from '../../asset/img/logo.png'
+import {Link} from 'react-router-dom'
 export class customerheader extends Component {
+
+
+
+    async handleLogout() {
+        await window.localStorage.clear()
+    }
   render() {
     return (
       <div style={{marginBottom:'10%'}}>
@@ -9,26 +16,18 @@ export class customerheader extends Component {
                     <a href="index.html" className="site-logo">
                         <img src={logo} alt='ok' />
                     </a>
-                    <div className="responsive-bar">
+                    {/* <div className="responsive-bar">
                         <i className="fa fa-bars" />
-                    </div>
+                    </div> */}
                    
                     
-                    <nav className="main-menu">
-                        <ul className="menu-list">
-                            <li>
-                                <a href> Our Solution</a>
-                            </li>
-                            <li>
-                                <a href>Our blog</a>
-                            </li>
-
-                            <li>
-                                <a href>About Us</a>
-                            </li>
-                            <li>
-                                <a href>Contact Us</a>
-                            </li>
+                    <nav className="float-right">
+                        <ul className>
+                            
+                            <Link to="/">
+                                {" "}
+                                <button className="btn btn-danger" onClick={this.handleLogout.bind(this)}>Sign Out</button>
+                            </Link>
                             
                         </ul>
                         

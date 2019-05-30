@@ -107,7 +107,7 @@ export default class withdrawalTransaction extends Component {
                         type="text"
                         name=""
                         id=""
-                        placeholder="Amount sending"
+                        placeholder="Amount"
                         value={this.state.amount}
                         onChange={this.handleAmount.bind(this)}
                       />

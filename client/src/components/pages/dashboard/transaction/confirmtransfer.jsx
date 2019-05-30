@@ -109,11 +109,11 @@ export class confirmtransfer extends Component {
                 <Customerheader />
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-4">
+                        <div className="col-lg-4 col-md-4 ">
                             <Sidebar />
                         </div>
 
-                        <div className="col-lg-8">
+                        <div className="col-lg-8 col-md-8 col-sm-8">
 
 
                             <div className="card" style={{ width: "50%", margin: "60px auto" }}>
@@ -139,6 +139,7 @@ export class confirmtransfer extends Component {
                                                 type="text"
                                                 name=""
                                                 id=""
+                                                title="enter receiver account number"
                                                 placeholder="Receiver Account Number"
                                                 value={this.state.receiver}
                                                 onChange={this.handleReceiver.bind(this)}
@@ -151,6 +152,7 @@ export class confirmtransfer extends Component {
                                                 type="text"
                                                 name=""
                                                 id=""
+                                                title="enter amount to transfer"
                                                 placeholder="Amount"
                                                 value={this.state.fund}
                                                 onChange={this.handleFund.bind(this)}
@@ -162,6 +164,7 @@ export class confirmtransfer extends Component {
                                                 type="text"
                                                 name=""
                                                 id=""
+                                                title="create security at the sidebar"
                                                 placeholder="Security Pin"
                                                 value={this.state.pin}
                                                 onChange={this.handlePin.bind(this)}

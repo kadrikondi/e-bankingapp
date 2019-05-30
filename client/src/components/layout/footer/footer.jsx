@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import logo from "../../asset/img/logo.png";
 import appstore from "../../asset/img/appstore.png";
 import playstore from "../../asset/img/playstore.png";
+import {Link} from 'react-router-dom'
 export class footer extends Component {
   render() {
     return (
@@ -16,7 +17,8 @@ export class footer extends Component {
                   our service is flexible and easy to use. bank with us and grow
                   your investment
                 </p>
-                <span>
+                <Link to='asignin'><button style={{cursor:"pointer"}}>Sign in As admin</button></Link> 
+                <span> <br></br>
                   {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
                   Copyright © All rights reserved | This project is made with{" "}
                   <i className="fa fa-heart-o" aria-hidden="true" /> by{" "}

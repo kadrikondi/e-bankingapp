@@ -62,7 +62,7 @@ export class debitaccount extends Component {
                 style={{ width: "50%", margin: "0 auto" }}
               >
                 <div className="card-header dark-text text-center py-4">
-                  <h4>withdrawal </h4>
+                  <h4>Debit Account </h4>
                   <div className="card-body text-center">
                     <div className="form-group">
                       <input

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Signin.css";
+import "../../asset/css/loader.css";
 
 import { Link } from "react-router-dom";
 
@@ -63,7 +64,14 @@ class Signin extends Component {
 
   render() {
     if (this.state.isLoading) {
-      return <div>load</div>;
+      return (
+        <div>
+          {/* <!-- Page Preloder --> */}
+          <div id="preloderr">
+            <div className="loaderr" />
+          </div>
+        </div>
+      );
     }
 
     return (

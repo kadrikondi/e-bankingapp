@@ -92,7 +92,7 @@ export class transfer extends Component {
                       />
                     </div> */}
                     <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search for a doctor via name or specialization" aria-label="Search" value={this.state.acct_no} onChange={this.handleName.bind(this)}/>
-                    <h1>sdfghjfgh{this.state.msg}</h1>
+                    <h1>{this.state.msg}</h1>
                       {" "}
                       {/* <button
                         className="site-btn sb-gradients"

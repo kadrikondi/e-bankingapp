@@ -21,12 +21,12 @@ export class checkbalance extends Component {
 
         <div className="container mt-5">
           <div className="row">
-              <div className="col-lg-4">
+              <div className="col-lg-4 col-md-4 col-sm-4">
 
              <Sidebar/>
                 
               </div>
-            <div className="col-lg-8 mt-5">
+            <div className="col-lg-8  col-md-8 col-sm-8 mt-5">
               {" "}
               <div className="balance" style={balanceStyle}>
                 <p
@@ -50,8 +50,8 @@ export class checkbalance extends Component {
 }
 
 const balanceStyle = {
-  width: "800px",
-  height: "200px",
+  width: "80%",
+  height: "80%x",
   padding: "10px",
   backgroundColor: "#3f16af",
   borderRadius: "20%",

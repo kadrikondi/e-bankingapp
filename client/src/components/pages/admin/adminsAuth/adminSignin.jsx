@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import '../../../asset/css/loader.css'
 // import "./Signin.css";
 
 import { Link } from "react-router-dom";
@@ -64,7 +65,14 @@ class AdminSignin extends Component {
 
     render() {
         if (this.state.isLoading) {
-            return <div>load</div>;
+            return (
+                <div>
+                    {/* <!-- Page Preloder --> */}
+                    <div id="preloderr">
+                        <div className="loaderr" />
+                    </div>
+                </div>
+            );
         }
 
         return (
@@ -89,7 +97,7 @@ class AdminSignin extends Component {
                                     id="materialLoginFormEmail"
                                     className="form-control"
                                     value={this.state.email}
-                                    placeholder="enter your account number"
+                                    placeholder="enter your email address"
                                     onChange={this.handleEmail}
                                 />
                             </div>

@@ -42,6 +42,7 @@ class AdminSignup extends Component {
         // } else {
         //     this.setState({ isLoading: true });
         // }
+        this.setState({isLoading:true})
 
         fetch("/register", {
             method: "POST",
@@ -97,6 +98,16 @@ class AdminSignup extends Component {
         //     if(this.state.info===''){
         //         document.getElementById('info').style.display='none'
         //   }
+        if (this.state.isLoading) {
+            return (
+                <div>
+                    {/* <!-- Page Preloder --> */}
+                    <div id="preloderr">
+                        <div className="loaderr" />
+                    </div>
+                </div>
+            );
+        }
         const noshowinfo = {
             display: "none"
         };
