@@ -196,7 +196,7 @@ router.put('/bill/:id', upload.single('bill'), async(req, res) => {
             const img =  result.original_filename
             let billUrl = result.secure_url
             let publicId = result.public_id
-            const User = await user.findByIdAndUpdate(req.param.id, {bill:billUrl}, {new:true})
+            const User = await user.findByIdAndUpdate(req.params.id, {bill:billUrl}, {new:true})
             res.json({
             user:User,
             message:'Success: Nepa bill uploaded successfully'
