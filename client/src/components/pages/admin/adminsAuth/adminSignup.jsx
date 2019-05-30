@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Signup.css";
 import Adminheader from "../adminheader";
 import Adminsidebar from "../adminsidebar"
@@ -120,12 +120,9 @@ class AdminSignup extends Component {
 
                     <div className="row">
 
-                        <div className="col-lg-3">
-                            <Adminsidebar/>
-                        </div>
-                    <div className="col-lg-8">
+                    <div className="col-lg-10">
                 {/* <!--Form with header--> */}
-                <div className="card mt-5" id="signup" style={{width:'60%'}}>
+                <div className="card mt-5" id="signup">
                     <div className="card-body">
                         {/* <!--Header--> */}
                         <div className="card-header black-text text-center py-4">
@@ -218,6 +215,11 @@ class AdminSignup extends Component {
                                     ) : null}
                                 </div>
                                     </button>
+                                        <p className="">
+                                            {" "}
+                                            <br />
+                                            Already admin &nbsp;<Link to="/asignup"> Signin</Link>
+                                        </p>
                         </div>
 
                     

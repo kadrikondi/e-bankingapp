@@ -30,7 +30,7 @@ const port = process.env.PORT || 9000;
 
 app.listen(port, () => {
     if (process.env.NODE_ENV === 'production') {
-        mongoose.connect('mongodb://eventmanager:kadzee222@ds231740.mlab.com:31740/kondipressdb', {
+        mongoose.connect('mongodb+srv://yakubebank:kadzee222.@cluster0-opegc.mongodb.net/test?retryWrites=true&w=majority', {
                 useNewUrlParser: true
             })
             .then(() => {

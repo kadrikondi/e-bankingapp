@@ -8,9 +8,11 @@ export class adminheader extends Component {
                 
                 <header className="header-section clearfix mb-5" style={{ backgroundColor: 'black', color: '#f1f1f1' }}>
                     <div className="container-fluid">
-                        <Link to="/adash" className="site-logo">
-                            <img src={logo} alt='ok' />
+                        <Link to="/adash" className="site-logo navbar-brand white" style={{ color: "white", fontFamily: "cursive" }}>
+                              Ebanking system
+                            {/* <img src={logo} alt='ok' /> */}
                         </Link>
+                       
                         <div className="responsive-bar">
                             <i className="fa fa-bars" />
                         </div>

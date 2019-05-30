@@ -70,10 +70,10 @@ export class footer extends Component {
                       <a href>Privacy Policy </a>
                     </li>
                     <li>
-                      <a href>support@company.com</a>
+                      <a href>support@kabiru-ebank.herokuapp.com</a>
                     </li>
                     <li>
-                      <a href>(123) 456-7890</a>
+                      <a href>(124) 35985569</a>
                     </li>
                   </ul>
                 </div>
