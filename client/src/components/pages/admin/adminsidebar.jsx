@@ -52,7 +52,7 @@ export class sidebar extends Component {
             style={{ backgroundColor: "black", display: "block" }}
           >
             <Link to="/adash" style={liStyle}>
-              <p style={{ color: "white", fontSize: "1.5em" ,boxShadow:'3px 3px  20px gray' }}>Dashboard</p>
+              <p style={{ color: "white", fontSize: "1.5em" ,boxShadow:'3px 3px  20px gray' }}> Admin Dashboard</p>
             </Link>
           </li>
           <img

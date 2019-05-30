@@ -8,10 +8,11 @@ export class header extends Component {
       <div>
         
         {/* Header section */}
-        <header className="header-section clearfix" style={{ backgroundColor:'#3f16af',padding:"10px 5px"}}>
+        <header className="header-section clearfix " style={{ backgroundColor:'#3f16af',padding:"10px 5px" ,marginBottom:"60px"}}>
           <div className="container-fluid">
             <a href="/" className="site-logo">
-              <img src={logo} alt="ok" />
+              {/* <img src={logo} alt="ok" /> */}
+              <h4 style={{color:"white"}}>Ebanking system</h4>
             </a>
             <div className="responsive-bar">
               <i className="fa fa-bars" />

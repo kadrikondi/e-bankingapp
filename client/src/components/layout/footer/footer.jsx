@@ -11,13 +11,14 @@ export class footer extends Component {
         <footer className="footer-section">
           <div className="container">
             <div className="row spad">
-              <div className="col-md-6 col-lg-3 footer-widget">
-                <img src={logo} className="mb-4" alt="" />
+              <div className="col-md-6 col-lg-6 footer-widget">
+                {/* <img src={logo} className="mb-4" alt="" /> */}
+                <h4 style={{ margin:"8px"}}>Ebanking system</h4>
                 <p>
                   our service is flexible and easy to use. bank with us and grow
                   your investment
                 </p>
-                <Link to='asignin'><button style={{cursor:"pointer"}}>Sign in As admin</button></Link> 
+                {/* <Link to='asignin'><button style={{cursor:"pointer"}}>Sign in As admin</button></Link>  */}
                 <span> <br></br>
                   {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
                   Copyright © All rights reserved | This project is made with{" "}
@@ -28,47 +29,8 @@ export class footer extends Component {
                   {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
                 </span>
               </div>
-              <div className="col-md-6 col-lg-2 offset-lg-1 footer-widget">
-                <h5 className="widget-title">Resources</h5>
-                <ul>
-                  <li>
-                    <a href="#">How to Buy Coin</a>
-                  </li>
-                  <li>
-                    <a href="#">Coin Overview</a>
-                  </li>
-                  <li>
-                    <a href="#">Blog News</a>
-                  </li>
-                  <li>
-                    <a href="#">How to Sell Coin</a>
-                  </li>
-                  <li>
-                    <a href="#">Purchase Theme</a>
-                  </li>
-                </ul>
-              </div>
-              <div className="col-md-6 col-lg-2 offset-lg-1 footer-widget">
-                <h5 className="widget-title">Quick Links</h5>
-                <ul>
-                  <li>
-                    <a href="#">Network Stats</a>
-                  </li>
-                  <li>
-                    <a href="#">Block Explorers</a>
-                  </li>
-                  <li>
-                    <a href="#">Governance</a>
-                  </li>
-                  <li>
-                    <a href="#">Exchange Markets</a>
-                  </li>
-                  <li>
-                    <a href="#">Get Theme</a>
-                  </li>
-                </ul>
-              </div>
-              <div className="col-md-6 col-lg-3 footer-widget pl-lg-5 pl-3">
+              
+                            <div className="col-md-6 col-lg-6 footer-widget pl-lg-5 pl-3">
                 <h5 className="widget-title">Follow Us</h5>
                 <div className="social">
                   <a href className="facebook">
