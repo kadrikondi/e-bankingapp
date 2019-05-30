@@ -143,7 +143,7 @@ class Signup extends Component {
     return (
       <div>
         {/* <!--Form with header--> */}
-        <div className="card mt-5" id="signup" style={{width:"50%"}} >
+        <div className="card mt-5" id="signup"  >
           <div className="card-body">
             {/* <!--Header--> */}
             <div className="card-header black-text text-center py-4">

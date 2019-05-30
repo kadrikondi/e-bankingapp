@@ -218,7 +218,7 @@ class AdminSignup extends Component {
                                         <p className="">
                                             {" "}
                                             <br />
-                                            Already admin &nbsp;<Link to="/asignup"> Signin</Link>
+                                            Already admin &nbsp;<Link to="/asignin"> Signin</Link>
                                         </p>
                         </div>
 

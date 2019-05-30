@@ -15,17 +15,14 @@ export class footer extends Component {
                 {/* <img src={logo} className="mb-4" alt="" /> */}
                 <h4 style={{ margin:"8px"}}>Ebanking system</h4>
                 <p>
-                  our service is flexible and easy to use. bank with us and grow
-                  your investment. &heart;
+                  Our service is flexible and easy to use. bank with us and grow your investment. &hearts;
                 </p>
                 {/* <Link to='asignin'><button style={{cursor:"pointer"}}>Sign in As admin</button></Link>  */}
                 <span> <br></br>
                   {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
                   Copyright © All rights reserved | This project is made with{" "}
                   <i className="fa fa-heart-o" aria-hidden="true" /> by{" "}
-                  <a href="/" target="_blank">
-                    Kabiru
-                  </a>
+                  <Link to="/asignup"> Yakub Kabiru</Link>
                   {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
                 </span>
               </div>

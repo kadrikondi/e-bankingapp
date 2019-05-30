@@ -20,7 +20,7 @@ export class landingpage extends Component {
               <h4>Use modern banking technologies save your money</h4>
               <form className="hero-subscribe-from">
              <Link to='/signup'> < button className = "site-btn sb-gradients" > Register With us </button>  </Link>
-              <Link to='/signin'>  <button className="site-btn sb-gradients">Sign in</button>
+              <Link to='/signin'>  <button className="site-btn sb-gradients mt-3">Sign in</button>
               </Link>
               </form>
             </div>
