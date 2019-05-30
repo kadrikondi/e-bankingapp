@@ -1,8 +1,10 @@
-const app = require('express')()
+// const app = require('express')()
+const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
-const express = require('express')
+
 // const passport = require('passport')
+const app = express();
 const routes = require('./routes/routes')
 const path = require('path')
 app.use(bodyParser.json())
