@@ -8,11 +8,12 @@ export class header extends Component {
       <div>
         
         {/* Header section */}
-        <header className="header-section clearfix " style={{ backgroundColor:'#3f16af',padding:"10px 5px" ,marginBottom:"60px"}}>
+        <header className="header-section clearfix " style={{ backgroundColor:'#3f16af',padding:"10px 5px" ,marginBottom:"100px"}}>
           <div className="container-fluid">
-            <a href="/" className="site-logo">
+            <a href="/" className="site-logo navbar-brand white" style={{color:"white", fontFamily:"cursive"}}>
               {/* <img src={logo} alt="ok" /> */}
-              <h4 style={{color:"white"}}>Ebanking system</h4>
+              Ebanking system
+              {/* <h4 style={{color:"white", margin:"0px", padding:"0px"}}>Ebanking system</h4> */}
             </a>
             <div className="responsive-bar">
               <i className="fa fa-bars" />
@@ -21,7 +22,7 @@ export class header extends Component {
             <Link to='/signup' className="site-btn" style={{ color: '#ffffff' }}>
               Sign Up Free
             </Link>
-            <nav className="main-menu">
+            {/* <nav className="main-menu">
               <ul className="menu-list" style={{color:'#ffffff'}}>
                 <li>
                   <a href>Solution</a>
@@ -39,7 +40,7 @@ export class header extends Component {
                   <a href>Contact</a>
                 </li>
               </ul>
-            </nav>
+            </nav> */}
           </div>
         </header>
       </div>
