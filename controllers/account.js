@@ -48,7 +48,7 @@ exports.createAccountNumber = async (req, res) => {
                         }
                         else{
                             res.status(200).json({
-                                message:'Mail sent successfully '
+                                message:' account number generated & Mail sent successfully '
                             })
                         }
                         

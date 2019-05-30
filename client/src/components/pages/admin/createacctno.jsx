@@ -40,8 +40,8 @@ export default class createacctno extends Component {
         })
         .then( res => res.json())
         .then( res => {
-            alert(res)
-            console.log(res)
+            alert(res.message)
+            console.log(res.message)
         })
     }
     handleUpdate(e){
