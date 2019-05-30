@@ -16,7 +16,7 @@ export class footer extends Component {
                 <h4 style={{ margin:"8px"}}>Ebanking system</h4>
                 <p>
                   our service is flexible and easy to use. bank with us and grow
-                  your investment
+                  your investment. &heart;
                 </p>
                 {/* <Link to='asignin'><button style={{cursor:"pointer"}}>Sign in As admin</button></Link>  */}
                 <span> <br></br>
