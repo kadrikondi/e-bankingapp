@@ -20,8 +20,8 @@ if (process.env.NODE_ENV === 'production') {
 
 
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
-        // res.send(`<h1>ERORR 404, PAGE NOT FOUND</h1>`)
+        res.sendFile(path.resolve(__dirname, 'client/build/index.html'))
+        res.send(`<h1>ERORR 404, PAGE NOT FOUND</h1>`)
     })
 }
 
