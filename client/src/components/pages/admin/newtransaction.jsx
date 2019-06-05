@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Adminheader from "./adminheader";
 import Adminsidebar from "./adminsidebar";
+import './adminsAuth/Signin.css'
 import { Link } from "react-router-dom";
 
 export default class newtransaction extends Component {
@@ -77,8 +78,8 @@ export default class newtransaction extends Component {
             </div>
             <div className="col-lg-8">
               <div
-                className="card mt-5"
-                style={{ width: "50%", margin: "0 auto" }}
+                className="card mt-5" id="signin"
+                // style={{ width: "50%", margin: "0 auto" }}
               >
                 <div className="card-header dark-text text-center py-4">
                   <h4>Transaction details</h4>
