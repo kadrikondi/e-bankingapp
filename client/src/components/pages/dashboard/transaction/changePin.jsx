@@ -63,7 +63,7 @@ export default class changePin extends Component {
                         value={this.state.pin}
                         id="acct"
                         onChange={this.handlePin.bind(this)}
-                        placeholder=" Enter Pin"
+                        placeholder=" Enter pin"
                       />
                     </div>
                    
