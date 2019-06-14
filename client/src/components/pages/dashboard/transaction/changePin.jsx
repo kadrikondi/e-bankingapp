@@ -58,7 +58,7 @@ export default class changePin extends Component {
                     <div className="form-group">
                       <input
                         className="form-control"
-                        type="text"
+                        type="password"
                         name=""
                         value={this.state.pin}
                         id="acct"
