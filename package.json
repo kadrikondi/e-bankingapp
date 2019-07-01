@@ -7,14 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
     "server": "nodemon app.js",
-     "heroku-postbuild":
-     "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
-    
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/kadrikondi/e-banking.git"
-    },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kadrikondi/e-banking.git"
+  },
   "author": "idris abdulkadri and john otitoju",
   "license": "ISC",
   "dependencies": {
@@ -25,6 +23,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.5.8",
     "mongoose-mongodb-errors": "0.0.2",
+    "morgan": "^1.9.1",
     "multer": "^1.4.1",
     "node-mailer": "^0.1.1"
   }

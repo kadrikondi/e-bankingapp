@@ -53,6 +53,7 @@ export class newcustomer extends Component {
                   <th>Nepa bill</th>
                   <th>signature</th>
                   <th>Confirm</th>
+                  <th>delete</th>
 
                 </tr>
                
@@ -103,6 +104,8 @@ export class newcustomer extends Component {
                      }} alt="" /></a></td>
                   
                   <td><Link to={`/create/acctno/${user._id}`}><button className="btn btn-success">confirm</button></Link></td>
+
+                  <td>for delete</td>
                 </tr>
                   
                    
