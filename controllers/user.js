@@ -237,7 +237,7 @@ exports.updateProfile = async (req, res) => {
 
 //delete user
 exports.deleteUser = async (req, res) => {
-    const info = await user.findOneAndDelete({_id:req.body.id})
+    const info = await user.findOneAndDelete({_id: req.body.id })
     res.json({message:'Account closed'})
 }
 
