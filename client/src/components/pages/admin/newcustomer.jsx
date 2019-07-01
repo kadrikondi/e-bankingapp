@@ -22,9 +22,23 @@ export class newcustomer extends Component {
     .then( res => res.json())
     .then( res => {
       this.setState({users: res.info})
-      console.log(res.info[0])
+      // console.log(res.info[0])
     })
     .catch(err => console.log(err))
+  }
+  componentDidUpdate() {
+   
+    fetch('/newusers', {
+      headers: {
+        "Accept": "application/json"
+      }
+    })
+      .then(res => res.json())
+      .then(res => {
+        this.setState({ users: res.info })
+        // console.log(res.info[0])
+      })
+      .catch(err => console.log(err))
   }
   // clickDelete(id){
   //   axios.delete(`/del/user`)
