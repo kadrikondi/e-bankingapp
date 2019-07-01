@@ -22,11 +22,24 @@ export class newcustomer extends Component {
     .then( res => res.json())
     .then( res => {
       this.setState({users: res.info})
-      console.log(res.info[0])
     })
     .catch(err => console.log(err))
   }
 
+  componentDidUpdate() {
+    fetch('/newusers', {
+      headers: {
+        "Accept": "application/json"
+      }
+    })
+      .then(res => res.json())
+      .then(res => {
+        this.setState({ users: res.info })
+        // console.log(res.info[0])
+      })
+      .catch(err => console.log(err))
+  }
+  
   async handleDelete(e){
     e.preventDefault()
     var id = document.getElementById('delete').value
@@ -76,7 +89,10 @@ export class newcustomer extends Component {
                   <th>Nepa bill</th>
                   <th>signature</th>
                   <th>Confirm</th>
+
+
                   <th>Delete</th>
+
 
                 </tr>
                
@@ -127,8 +143,11 @@ export class newcustomer extends Component {
                      }} alt="" /></a></td>
                   
                   <td><Link to={`/create/acctno/${user._id}`}><button className="btn btn-success">confirm</button></Link></td>
+
+
                   <td><button className="btn btn-danger" onClick={this.handleDelete.bind(this)}>Del</button></td>
                   <td><input type="hidden" id="delete" value={user._id}/></td>
+
                 </tr>
                   
                    
