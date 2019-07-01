@@ -84,7 +84,7 @@ export class newcustomer extends Component {
                   <th>Nepa bill</th>
                   <th>signature</th>
                   <th>Confirm</th>
-                  <th>Del</th>
+                  <th>Delete</th>
 
                 </tr>
                
