@@ -88,12 +88,12 @@ export class sidebar extends Component {
             </li>
             <li className="list-group-item">
               <Link to={`/profile/${this.state.id}`} style={liStyle}>
-                customer information
+               User Profile 
               </Link>
             </li>
             <li className="list-group-item ">
               <Link to={`/changepin/${this.state.acct}`} style={liStyle}>
-                change pin
+                Create Pin 
               </Link>
             </li>
             <li className="list-group-item ">

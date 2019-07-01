@@ -319,7 +319,7 @@ class Signup extends Component {
 
               <div className="form-group">
                 {/* <i class="fa fa-lock prefix"></i> */}
-                <label htmlFor="">Select image</label>{" "}
+                <label htmlFor="">Upload Passport</label>{" "}
                 <input
                   type="file"
                   required="required"
