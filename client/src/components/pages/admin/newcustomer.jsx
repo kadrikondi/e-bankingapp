@@ -3,11 +3,14 @@ import Adminheader from "./adminheader";
 import Sidebar from "./adminsidebar";
 import {Link} from 'react-router-dom'
 import moment from 'moment'
+import axios from 'axios'
+
 export class newcustomer extends Component {
   constructor(){
     super()
     this.state = {
-      users:[]
+      users:[],
+      id:''
     }
   }
   componentDidMount(){
@@ -20,6 +23,34 @@ export class newcustomer extends Component {
     .then( res => {
       this.setState({users: res.info})
       console.log(res.info[0])
+    })
+    .catch(err => console.log(err))
+  }
+  // clickDelete(id){
+  //   axios.delete(`/del/user`)
+  //   .then(res => {
+       
+  //       alert(res.data.message)
+  //   })
+  //   .catch(err => console.log(err))
+  // }
+  async handleDelete(e){
+    e.preventDefault()
+    // this.clickDelete(this.props.match.params.id)
+    var id = document.getElementById('delete').value
+    fetch('/del/user', {
+      method:"DELETE",
+      headers:{
+        "Accept":"application/json",
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify({
+        id:id
+      })
+    })
+    .then(res => res.json())
+    .then( res => {
+      alert(res.message)
     })
     .catch(err => console.log(err))
   }
@@ -53,7 +84,10 @@ export class newcustomer extends Component {
                   <th>Nepa bill</th>
                   <th>signature</th>
                   <th>Confirm</th>
-                  <th>delete</th>
+
+
+                  <th>Delete</th>
+
 
                 </tr>
                
@@ -105,7 +139,10 @@ export class newcustomer extends Component {
                   
                   <td><Link to={`/create/acctno/${user._id}`}><button className="btn btn-success">confirm</button></Link></td>
 
-                  <td>for delete</td>
+
+                  <td><button className="btn btn-danger" onClick={this.handleDelete.bind(this)}>Del</button></td>
+                  <td><input type="hidden" id="delete" value={user._id}/></td>
+
                 </tr>
                   
                    
