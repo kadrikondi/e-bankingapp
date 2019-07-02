@@ -18,6 +18,7 @@ else {
     const mongoose = require('mongoose')
     const morgan = require('morgan')
     const app = express();
+    app.use(compression())
     const routes = require('./routes/routes')
     const path = require('path')
     const pid = process.pid
@@ -25,7 +26,6 @@ else {
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({extended:true}))
     app.use('/', routes)
-    app.use(compression())
 
     if (process.env.NODE_ENV === 'production') {
         app.use(express.static(path.resolve(__dirname, 'client/build')))
