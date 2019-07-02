@@ -13,6 +13,7 @@ if(cluster.isMaster){
 else {
     //cluster worker
     const express = require('express')
+    const compression = require('compression')
     const bodyParser = require('body-parser')
     const mongoose = require('mongoose')
     const morgan = require('morgan')
@@ -24,6 +25,7 @@ else {
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({extended:true}))
     app.use('/', routes)
+    app.use(compression())
 
     if (process.env.NODE_ENV === 'production') {
         app.use(express.static(path.resolve(__dirname, 'client/build')))
