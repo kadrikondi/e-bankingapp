@@ -45,7 +45,7 @@ export class footer extends Component {
                 </div>
               </div>
             </div>
-            <div className="footer-bottom">
+            <div className="footer-bottom" style={{backgroundColor:'pink'}}>
               <div className="row">
                 <div className="col-lg-4 store-links text-center text-lg-left pb-3 pb-lg-0">
                   <a href>

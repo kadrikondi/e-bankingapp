@@ -69,7 +69,7 @@ class Signup extends Component {
           axios.post('/create', formdata)
    
           .then( res => {
-            //console.log(res);
+            // console.log(res);
            
             this.setState({ isLoading: false });
           
@@ -79,12 +79,12 @@ class Signup extends Component {
               this.props.history.push(`/nextform/${id}`);
             } else {
               this.setState({ info: res.data.message });
-              //alert(res.data.message)
+              // console.log(res.data.message)
               this.setState({ isLoading: false });
             }
           })
           .catch( err => console.log(err))
-    // this.setState({isLoading: true });
+    // this.setState({isLoading: false });
   };
   handleFirstName(e) {
     this.setState({ fname: e.target.value });

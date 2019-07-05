@@ -109,14 +109,16 @@ router.post('/create', upload.single('photo'), async(req, res) => {
     }
     else if(body.password.length < 8){
         res.json({
-            message:'password must not be more than 8 characters',
+            message:'password must not be less than 8 characters',
             success:false
         })
     }
     else if(req.file == undefined || req.file == ''){
         res.json({message:`Error: No file selected`})
     }
+    
     else{
+        console.log('reach')
         emailExistence.check(req.body.email, async function(error, response){
             if(response == false){
                 res.json({message:'The email address you entered is invalid'})
@@ -131,6 +133,7 @@ router.post('/create', upload.single('photo'), async(req, res) => {
                 info.photo = imgUrl
                 await info.save()
                 var id = info._id
+                console.log('save')
                 //res.json({message:'processing your account...', info:info, id:id})
                 var transport = nodemailer.createTransport({
                     service:'Gmail',
