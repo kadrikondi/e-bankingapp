@@ -32,7 +32,7 @@ export class admindash extends Component {
                 <Link to="/credit">
                   <button className="site-btn sb-gradients btn btn-lg mt-3 ">
                     {" "}
-                    <h4 style={{ color: "#f2f2f2" }}>Credit Account</h4>{" "}
+                    <h4 style={{ color: "#f2f2f2" }}>Credit</h4>{" "}
                   </button>
                 </Link>
               </div>
@@ -61,7 +61,7 @@ export class admindash extends Component {
                 <Link to="/debit">
                   <button className="site-btn sb-gradients btn btn-lg mt-3 ">
                     {" "}
-                    <h4 style={{ color: "#f2f2f2" }}>Debit Account</h4>{" "}
+                    <h4 style={{ color: "#f2f2f2" }}>Debit</h4>{" "}
                   </button>
                 </Link>
               </div>

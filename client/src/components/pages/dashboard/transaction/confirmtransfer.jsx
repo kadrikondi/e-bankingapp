@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Customerheader from "../customerheader";
 import Sidebar from "./sidebar";
+import '../../Signup/Signup.css'
 import '../../admin/adminsAuth/Signin.css'
 
 export class confirmtransfer extends Component {
@@ -12,7 +13,8 @@ export class confirmtransfer extends Component {
       receiver:'',
       fname:'',
       amt:'',
-      pin:''
+      pin:'',
+      isloading:false
     }
     this.handleTransact = this.handleTransact.bind(this)
   }
@@ -54,7 +56,7 @@ export class confirmtransfer extends Component {
   handleSend(e){
     e.preventDefault()
     //console.log(this.state.pin)
-    
+    this.setState({isloading:true})
     fetch('/fund', {
       method:'PUT',
       headers:{
@@ -74,6 +76,7 @@ export class confirmtransfer extends Component {
             this.handleTransact()
         }
         else{
+          this.setState({isloading:false})
             alert(res.message)
         }
         
@@ -218,7 +221,12 @@ export class confirmtransfer extends Component {
                                             />
                                         </div>
             
-                                        <button className="site-btn sb-gradients" onClick={this.handleSend.bind(this)}>Send</button>
+                                        <button className="site-btn sb-gradients" onClick={this.handleSend.bind(this)}>Send
+                                        
+                                        {this.state.isloading ? (
+                    <div id="signuploading" ></div>
+                  ) : (<div></div>)}
+                                        </button>
                                     </div>
                                 </div>
                             </div>

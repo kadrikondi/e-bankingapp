@@ -69,6 +69,7 @@ export default class completeReg extends Component {
             this.setState({ isLoading: false });
             if (res.data.message === "Success: Signature uploaded successfully") {
               // this.setState({ info: res.data.message });
+              alert(res.data.alert)
 
                 this.props.history.push("/signin");
             } else {
@@ -107,8 +108,14 @@ export default class completeReg extends Component {
     const noshowinfo = {
         display: "none"
       }
+    //    function hideID() {
+        
+    //   // document.getElementById(formId).style.display="none"
+    // }
+    // const HideId=  document.getElementById(formId).style.display="none";
     return (
       <div>
+        
         <div id="formi1">
         <div className="card mt-5" id="signup" >
           <div className="card-body">
@@ -123,13 +130,13 @@ export default class completeReg extends Component {
             <fieldset>
               <legend>Form 001 Upload ID Card</legend>
 
-              <div className="form-group">
+              <div className="form-group" >
                 <label htmlFor="">Upload your ID card </label>{" "}
                 <input
                   type="file"
                   required="required"
                   id="form10"
-                  className="form-control"
+                  className="form-control "
                   //name="password1"
                   onChange={this.handleCard.bind(this)}
                 />
@@ -139,15 +146,19 @@ export default class completeReg extends Component {
               {this.state.info === "" || this.state.info === undefined || this.state.info === "Success: id card uploaded successfully" || this.state.info === "Success: Nepa bill uploaded successfully" || this.state.info === "Success: Signature uploaded successfully"  ? (
               <div className="alert alert-danger" style={noshowinfo} id="info">
                 ){this.state.info}
+                
+
               </div>
             ) : (
               <div className="alert alert-danger" id="info">
                 {this.state.info}
-              </div>
+                             </div>
             )}
                 
               {this.state.info === "Success: id card uploaded successfully"? (
-                <div className="alert alert-success">{this.state.info}</div>
+                <div className="alert alert-success">{this.state.info} { document.getElementById("formi1").style.display='none'}  </div>
+                        
+                    
               ):null}
             <div className="text-center">
               <button
@@ -198,6 +209,7 @@ export default class completeReg extends Component {
               {this.state.info === "" || this.state.info === undefined || this.state.info === "Success: Nepa bill uploaded successfully" || this.state.info === "Success: id card uploaded successfully" || this.state.info === "Success: Signature uploaded successfully"? (
                 <div className="alert alert-danger" style={noshowinfo} id="info">
                   ){this.state.info}
+                  
                 </div>
               ) : (
                   <div className="alert alert-danger" id="info">
@@ -206,7 +218,7 @@ export default class completeReg extends Component {
                 )}
 
               {this.state.info === "Success: Nepa bill uploaded successfully" ? (
-                <div className="alert alert-success">{this.state.info}</div>
+                <div className="alert alert-success">{this.state.info} { document.getElementById("formi2").style.display='none'} </div>
               ) : null}
             <div className="text-center">
               <button

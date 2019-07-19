@@ -7,14 +7,19 @@ export class debitprocess extends Component {
   constructor(){
     super()
     this.state = {
-      balance:''
+      balance:'',
+      sender:'',
+      isLoading:false
+
     }
   }
   async componentDidMount(){
     const amount = await window.localStorage.getItem('amount')
-    this.setState({balance:amount})
+    const sender = await window.localStorage.getItem('sender')
+    this.setState({balance:amount, sender:sender})
   }
   updateAccount(id){
+    this.setState({isLoading:true})
     fetch(`/acctamt/${id}`, {
       method:"PUT",
       headers:{
@@ -28,21 +33,27 @@ export class debitprocess extends Component {
     .then( res => res.json())
     .then(res => {
       //console.log(res)
-      
+      this.setState({isLoading:false})
       if(res.message === 'account updated'){
         alert(res.message)
         window.localStorage.removeItem('acctId')
         window.localStorage.removeItem('acctName')
         window.localStorage.removeItem('acctno')
         window.localStorage.removeItem('amount')
+        window.localStorage.removeItem('sender')
       }
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+      this.setState({isLoading:false})
+      console.log(err)})
   }
   async handleSubmit(e){
     e.preventDefault()
     this.updateAccount(this.props.match.params.id)  
   }
+  handleSender(e){
+    this.setState({sender:e.target.value})
+}
   handleBalance(e){
     this.setState({balance:e.target.value})
   }
@@ -75,6 +86,16 @@ export class debitprocess extends Component {
                         onChange={this.handleBalance.bind(this)}
                         readOnly
                       />
+                                            <input
+                        className="form-control"
+                        type="hidden"
+                        name=""
+                        id=""
+                        placeholder="sender"
+                        value={this.state.sender}
+                        onChange={this.handleSender.bind(this)}
+                      
+                      />
                     </div>
 
                     {/* <div className="form-group">
@@ -88,7 +109,11 @@ export class debitprocess extends Component {
                     </div> */}
 
                     
-                    <button className="site-btn sb-gradients" onClick={this.handleSubmit.bind(this)}>Credit</button>
+                    <button className="site-btn sb-gradients" onClick={this.handleSubmit.bind(this)}>Credit
+                    {this.state.isLoading ? (
+                    <div id="signuploading" ></div>
+                  ) : (<div></div>)}
+                    </button>
                   </div>
                 </div>
               </div>

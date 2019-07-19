@@ -1,7 +1,7 @@
 const user = require('../models/user')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
-const nodemailer = require('node-mailer')
+const nodemailer = require('nodemailer')
 const auth = require('../config/config')
 const emailExistence = require('email-existence')
 
@@ -216,7 +216,7 @@ exports.getRegisteredUser = async (req, res) => {
 
 //update profile
 exports.updateProfile = async (req, res) => {
-    const info = await user.findOneAndUpdate({_id:req.params.id})
+    const info = await user.findOne({_id:req.params.id})
     if(!info){
         res.json({message:'No user found'})
     }
@@ -231,7 +231,32 @@ exports.updateProfile = async (req, res) => {
         info.address = req.body.address || info.address
         info.phone = req.body.phone || info.phone
         await info.save()
-        res.json({message:'profile updated'})
+        var transport = nodemailer.createTransport({
+            service:'Gmail',
+            auth:{
+                user:'yakubebank@gmail.com',
+                pass:'kadzee222..@'
+            }
+        })
+        var mailOptions = {
+            from:req.body.email,
+            to:'yakubebank@gmail.com',
+            subject:'User update notification',
+            html:'<p>'+'Admin, you have an update notification. '+info.fname+ ' has altered his/her account'+'</p>'
+        }
+        transport.sendMail(mailOptions, (err) => {
+            if (err) {
+                res.json({
+                    message:'Error message'
+                })
+            }
+            else{
+                res.json({
+                    message:'profile updated'
+                })
+            }
+            
+        })
     }
 }
 

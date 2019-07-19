@@ -76,8 +76,31 @@ exports.updateAccountAmount = async (req, res) => {
         var new_bal = (info.balance + parseInt(deposit_money))
         info.balance = new_bal || info.balance
         await info.save()
-        res.status(200).json({
-            message:'account updated'
+        var transport = nodemailer.createTransport({
+            service:'Gmail',
+            auth:{
+                user:'yakubebank@gmail.com',
+                pass:'kadzee222..@'
+            }
+        })
+        var mailOptions = {
+            from:'yakubebank@gmail.com',
+            to:info.email,
+            subject:'Credit alert',
+            html:'<p>Dear '+info.acct_name +',your account has been credited ' +  'with #'+ req.body.balance+'. Your new balance is #'+info.balance+'</p>'
+        }
+        transport.sendMail(mailOptions, (err) => {
+            if (err) {
+                res.status(403).json({
+                    message:'Request failed, please check your acct balance'
+                })
+            }
+            else{
+                res.status(200).json({
+                    message:'account updated'
+                })
+            }
+            
         })
     }
 }
@@ -186,7 +209,7 @@ exports.changePin = async (req, res) => {
             info.pin = hash || info.pin
             await info.save()
             res.status(200).json({
-                message:'Pin has been changed',
+                message:'Pin has created',
                 info:info
             })
         }

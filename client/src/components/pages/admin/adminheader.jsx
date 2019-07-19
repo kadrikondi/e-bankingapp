@@ -21,7 +21,7 @@ export class adminheader extends Component {
                         <nav className="main-menu">
                             <ul className="menu-list">
                                 <li>
-                                    <Link to="/adash"> Home</Link>
+                                    <Link to="/adash" > Home</Link>
                                 </li>
                                 <li>
                                     <a href>Our blog</a>
@@ -31,7 +31,9 @@ export class adminheader extends Component {
                                     <a href>About Us</a>
                                 </li>
                                 <li>
-                                    <a href>Contact Us</a>
+                                   <Link to="/" target="_blank">
+                                    customer page
+                                   </Link>
                                 </li>
 
                             </ul>

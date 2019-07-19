@@ -43,6 +43,7 @@ export default class newtransaction extends Component {
               var id = window.localStorage.getItem('acctId')
               if(res.message === 'Transaction was successful'){
                 window.localStorage.setItem('amount', this.state.amount)
+                window.localStorage.setItem('sender', this.state.sender)
                 this.props.history.push(`/debit/process/${id}`)
               }
           })

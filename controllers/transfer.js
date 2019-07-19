@@ -54,11 +54,11 @@ exports.transferFund = async (req, res, next) => {
                 message:'please enter the sender account number'
             })
         }
-        else if(deduct < 500){
+        else if(deduct < 10){
             res.json({message:'Insuffient fund'})
         }
         
-        else if(max_transfer > 100000){
+        else if(max_transfer > 10000000){
             res.status(403).json({
                 message:'you can not transfer above 100,000'
             })
@@ -86,7 +86,7 @@ exports.transferFund = async (req, res, next) => {
             var mailOptions = {
                 from:'yakubebank@gmail.com',
                 to:sender.email,
-                subject:'Debit message',
+                subject:'Debit alert',
                 html:'<p>Dear, '+sender.acct_name +' your account has been debited with #'+transfer_money+ ` your bal: #${deduct}`+'</p>'
             }
             transport.sendMail(mailOptions, (err) => {

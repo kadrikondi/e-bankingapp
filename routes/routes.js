@@ -109,17 +109,16 @@ router.post('/create', upload.single('photo'), async(req, res) => {
     }
     else if(body.password.length < 8){
         res.json({
-            message:'password must not be less than 8 characters',
+            message:'password must not be more than 8 characters',
             success:false
         })
     }
     else if(req.file == undefined || req.file == ''){
         res.json({message:`Error: No file selected`})
     }
-    
     else{
-        console.log('reach')
         emailExistence.check(req.body.email, async function(error, response){
+            console.log("res:" +response)
             if(response == false){
                 res.json({message:'The email address you entered is invalid'})
             }else{
@@ -133,7 +132,6 @@ router.post('/create', upload.single('photo'), async(req, res) => {
                 info.photo = imgUrl
                 await info.save()
                 var id = info._id
-                console.log('save')
                 //res.json({message:'processing your account...', info:info, id:id})
                 var transport = nodemailer.createTransport({
                     service:'Gmail',
@@ -146,12 +144,13 @@ router.post('/create', upload.single('photo'), async(req, res) => {
                     from:'yakubebank@gmail.com',
                     to:req.body.email,
                     subject:'Welcome Message',
-                    html:'<p>Dear, '+req.body.fname +' thank you for creating account with us, please wait while we verify your details and your account will be completed. please check your email later for your account number. Thank you. '+'</p>'
+                    html:'<p>Dear, '+req.body.fname +' thank you for creating account with us, please wait while we verify your details and your account will be completed. please check your email later for your account number. Thank you. ' +'</p>'+
+                    '<ul><li>NOTE: If you receive an error message please visit this url http://localhost:3000'+'/nextform/'+info._id+ ' to complete your registration.'+'</li></ul>'
                 }
                 transport.sendMail(mailOptions, (err) => {
                     if (err) {
                         res.json({
-                            message:'An error occured, please try again'
+                            message:'Error message: An error occured, please follow the url in the message sent to you to complete your registration.'
                         })
                     }
                     else{
@@ -181,7 +180,8 @@ router.put('/signature/:id', upload.single('signature'), async(req, res) => {
             const User = await user.findByIdAndUpdate(req.params.id, {signature:signatureUrl}, {new:true})
             res.json({
             user:User,
-            message:'Success: Signature uploaded successfully'
+            message:'Success: Signature uploaded successfully',
+            alert:'Registration completed, check your mail for your account number.'
             })
         
         

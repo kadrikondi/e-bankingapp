@@ -22,12 +22,11 @@ export class newcustomer extends Component {
     .then( res => res.json())
     .then( res => {
       this.setState({users: res.info})
-      // console.log(res.info[0])
     })
     .catch(err => console.log(err))
   }
+
   componentDidUpdate() {
-   
     fetch('/newusers', {
       headers: {
         "Accept": "application/json"
@@ -40,17 +39,9 @@ export class newcustomer extends Component {
       })
       .catch(err => console.log(err))
   }
-  // clickDelete(id){
-  //   axios.delete(`/del/user`)
-  //   .then(res => {
-       
-  //       alert(res.data.message)
-  //   })
-  //   .catch(err => console.log(err))
-  // }
+  
   async handleDelete(e){
     e.preventDefault()
-    // this.clickDelete(this.props.match.params.id)
     var id = document.getElementById('delete').value
     fetch('/del/user', {
       method:"DELETE",
@@ -117,7 +108,7 @@ export class newcustomer extends Component {
                   <td>{user.address}</td>
                   <td>{user.city}</td>
                   <td>{user.state}</td>
-                   <td className="ok"> <a href={user.photo}><img src={user.photo} alt="photo"
+                   <td className="ok"> <a href={user.photo}><img src={user.photo} alt="user_photo"
                      style={{
                        width: "100%",
 
@@ -125,7 +116,7 @@ export class newcustomer extends Component {
 
                      }} alt="" /></a></td>
 
-                   <td className="mt-3"> <a href={user.id_photo}><img src={user.id_photo} alt="photo"
+                   <td className="mt-3"> <a href={user.id_photo}><img src={user.id_photo} alt="card_photo"
                      style={{
                        width: "100%",
                        height: "auto",
@@ -135,7 +126,7 @@ export class newcustomer extends Component {
                      }} alt="" /></a></td>
 
 
-                   <td className="mt-3"> <a href={user.bill}><img src={user.bill} alt="photo"
+                   <td className="mt-3"> <a href={user.bill}><img src={user.bill} alt="bill_photo"
                      style={{
                        width: "100%",
 

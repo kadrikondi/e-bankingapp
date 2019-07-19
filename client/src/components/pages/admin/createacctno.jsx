@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Adminheader from "./adminheader";
 import Adminsidebar from "./adminsidebar";
+import '../../asset/css/loader.css'
 import { Link } from "react-router-dom";
 import './adminsAuth/Signin.css'
 //import {generateAccountNumber} from '../../apidata/api'
@@ -9,10 +10,12 @@ export default class createacctno extends Component {
     constructor(){
         super()
         this.state ={
-            acct_no:''
+            acct_no:'',
+            isloading: false
         }
     }
     handleGenerator(e){
+
         e.preventDefault()
         fetch('/generate', {
             headers:{
@@ -23,11 +26,16 @@ export default class createacctno extends Component {
         .then(res => res.json())
         .then(res => {
             //console.log(res)
+            
             this.setState({acct_no:res.acct_no})
+  
         })
-        .catch(err => console.log(err))
+        .catch(err =>{ 
+         
+          console.log(err)})
     }
     acctUpdate(id){
+      this.setState({isloading:true})
         fetch(`/acctno/${id}`, {
             method:"POST",
             headers:{
@@ -40,8 +48,13 @@ export default class createacctno extends Component {
         })
         .then( res => res.json())
         .then( res => {
+          this.setState({isloading:false})
             alert(res.message)
             console.log(res.message)
+        })
+        .catch(err => {
+          this.setState({isloading:false})
+          console.log(err)
         })
     }
     handleUpdate(e){
@@ -80,6 +93,7 @@ export default class createacctno extends Component {
                       />
                     </div>
                     <button className="site-btn sb-gradients" onClick={this.handleGenerator.bind(this)}>Generate here</button>
+                   
                   </div>
                 </div>
               </div>
@@ -110,6 +124,8 @@ export default class createacctno extends Component {
                     
                       <button className="site-btn sb-gradients" id="sb-gradients" onClick={this.handleUpdate.bind(this)}>
                         Countinue
+                        {this.state.isloading===true ?( <div id="signuploading" >loading</div>):null
+                  }
                       </button>
                     
                   </div>

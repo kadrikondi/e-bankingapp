@@ -37,8 +37,8 @@ export class customerProfile extends Component {
               <div className="card mt-3 "  >
 
                 {/* <!-- Card image --> */}
-                <div className="view overlay" style={{ height: "200px" }}>
-                  <img className="card-img-top circle " src={this.state.user.photo} style={{width:'100%',height:'100%'}} alt='ok'/>
+                <div className="view overlay" style={{ height: "40%" }}>
+                  <img className="card-img-top circle " src={this.state.user.photo} style={{width:'20%',height:'50%'}} alt='ok'/>
                   <a href=''>
                     <div className="mask rgba-white-slight"></div>
                   </a>

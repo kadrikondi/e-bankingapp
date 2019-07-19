@@ -12,7 +12,7 @@ export class header extends Component {
           <div className="container-fluid">
             <a href="/" className="site-logo navbar-brand white" style={{color:"white", fontFamily:"cursive"}}>
               {/* <img src={logo} alt="ok" /> */}
-              Ebanking system
+              E-banking 
               {/* <h4 style={{color:"white", margin:"0px", padding:"0px"}}>Ebanking system</h4> */}
             </a>
             <div className="responsive-bar">
@@ -22,25 +22,7 @@ export class header extends Component {
             <Link to='/signup' className="site-btn" style={{ color: '#ffffff' }}>
               Sign Up Free
             </Link>
-            {/* <nav className="main-menu">
-              <ul className="menu-list" style={{color:'#ffffff'}}>
-                <li>
-                  <a href>Solution</a>
-                </li>
-                <li>
-                  <a href>Features</a>
-                </li>
-                <li>
-                  <a href>News</a>
-                </li>
-                <li>
-                  <a href>About</a>
-                </li>
-                <li>
-                  <a href>Contact</a>
-                </li>
-              </ul>
-            </nav> */}
+
           </div>
         </header>
       </div>

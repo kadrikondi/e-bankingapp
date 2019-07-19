@@ -69,7 +69,7 @@ class Signup extends Component {
           axios.post('/create', formdata)
    
           .then( res => {
-            // console.log(res);
+            //console.log(res);
            
             this.setState({ isLoading: false });
           
@@ -79,12 +79,12 @@ class Signup extends Component {
               this.props.history.push(`/nextform/${id}`);
             } else {
               this.setState({ info: res.data.message });
-              // console.log(res.data.message)
+              //alert(res.data.message)
               this.setState({ isLoading: false });
             }
           })
           .catch( err => console.log(err))
-    // this.setState({isLoading: false });
+    // this.setState({isLoading: true });
   };
   handleFirstName(e) {
     this.setState({ fname: e.target.value });
@@ -150,11 +150,12 @@ class Signup extends Component {
               <h3>
                 <i className="fa fa-user-plus" /> Customer Register
               </h3>
+
             </div>
 
             {/* <!--Body--> */}
             <fieldset>
-              <legend>Personal Information</legend>
+              <legend>Personal Information &nbsp;(fill in Capital letter)</legend>
 
               <div className=" form-group input-group mt-4">
                 <label htmlFor="fname">First Name: &nbsp;</label>
@@ -208,7 +209,7 @@ class Signup extends Component {
 
               <div className="form-group input-group">
                 {/* <i className="fa fa-envelope prefix"></i> */}
-                <label htmlFor="">National ID card no: &nbsp;</label>{" "}
+                <label htmlFor=""> ID card no: &nbsp;</label>{" "}
                 <input
                   type="text"
                   id="form2"

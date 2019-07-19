@@ -13,7 +13,7 @@ export class footer extends Component {
             <div className="row spad">
               <div className="col-md-6 col-lg-6 footer-widget">
                 {/* <img src={logo} className="mb-4" alt="" /> */}
-                <h4 style={{ margin:"8px"}}>Ebanking system</h4>
+                <h4 style={{ margin:"8px"}}>E-banking system</h4>
                 <p>
                   Our service is flexible and easy to use. bank with us and grow your investment. &hearts;
                 </p>
@@ -22,7 +22,7 @@ export class footer extends Component {
                   {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
                   Copyright © All rights reserved | This project is made with{" "}
                   <i className="fa fa-heart-o" aria-hidden="true" /> by{" "}
-                  <Link to="/asignup"> Yakub Kabiru</Link>
+                  <Link to="/asignin" target="_blank"> KAYBEE</Link>
                   {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
                 </span>
               </div>
@@ -45,7 +45,7 @@ export class footer extends Component {
                 </div>
               </div>
             </div>
-            <div className="footer-bottom" style={{backgroundColor:'pink'}}>
+            <div className="footer-bottom">
               <div className="row">
                 <div className="col-lg-4 store-links text-center text-lg-left pb-3 pb-lg-0">
                   <a href>
