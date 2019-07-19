@@ -1,10 +1,33 @@
+<<<<<<< HEAD
 const express = require('express')
     //const compression = require('compression')
+=======
+const os = require('os')
+const cluster = require('cluster')
+
+if(cluster.isMaster){
+    //cluster master
+    const n_cpus = os.cpus().length
+    console.log(`Forking ${n_cpus} CPUS`)
+    console.log(`Master is using ${process.pid} process`)
+    for(let i=0; i < n_cpus; i++){
+        cluster.fork()
+    }
+}
+else {
+    //cluster worker
+    const express = require('express')
+    const compression = require('compression')
+>>>>>>> 0a2f43dfc1435990c64e2042795862bf5874d9e5
     const bodyParser = require('body-parser')
     const mongoose = require('mongoose')
     const morgan = require('morgan')
     const app = express();
+<<<<<<< HEAD
     //app.use(compression())
+=======
+    app.use(compression())
+>>>>>>> 0a2f43dfc1435990c64e2042795862bf5874d9e5
     const routes = require('./routes/routes')
     const path = require('path')
     //const pid = process.pid
