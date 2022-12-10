@@ -20,7 +20,7 @@
     "cloudinary": "^1.14.0",
     "compression": "^1.7.4",
     "email-existence": "^0.1.6",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.5.8",
     "mongoose-mongodb-errors": "0.0.2",
